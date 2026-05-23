@@ -8,12 +8,18 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate send
+
+    const { name, email, message } = formData;
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    const mailToUrl = `mailto:rajasideshpande04@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailToUrl;
+    setIsSent(true);
     setTimeout(() => {
-      setIsSent(true);
+      setIsSent(false);
       setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setIsSent(false), 3000);
-    }, 1000);
+    }, 3000);
   };
 
   return (
@@ -46,8 +52,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <span className="block text-sm text-gray-500 dark:text-gray-400 font-medium transition-colors">Email Me</span>
-                  <a href="mailto:rajasi@example.com" className="text-gray-800 dark:text-gray-200 font-bold group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors">
-                    rajasi@example.com
+                  <a href="mailto:rajasideshpande04@gmail.com" className="text-gray-800 dark:text-gray-200 font-bold group-hover:text-pink-500 dark:group-hover:text-pink-400 transition-colors">
+                    rajasideshpande04@gmail.com
                   </a>
                 </div>
               </div>

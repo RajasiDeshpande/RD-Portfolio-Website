@@ -6,29 +6,58 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "CSESync-Streamlining Department Operations",
-      description: "A role-based MERN platform that seamlessly unifies academics, administration, clubs, and stuent engagement into one smart departmental ecosystem",
+      description:
+        "Developed a full-stack MERN-based departmental management platform with role-based dashboards for Admins, Professors, and Students. Implemented real-time attendance tracking using Socket.IO, OTP-based JWT authentication, timetable management with approval workflow, Google Drive-integrated study materials, and notification systems to streamline academic operations.",
       tags: ["React", "Tailwind", "MongoDB", "Express"],
-      image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=600&h=400"
+      image:
+        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&q=80&w=600&h=400",
+      codeLink: "https://github.com/RajasiDeshpande/CSESync",
     },
     {
-      title: "Glamour E-Commerce",
-      description: "A full-stack e-commerce platform for a luxury beauty brand with 3D product previews.",
-      tags: ["React", "Node.js", "Three.js", "Stripe"],
-      image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&q=80&w=600&h=400"
+      title: "AI Powered Habit Tracker App",
+      description:
+        "Developed a full-stack AI-powered habit tracking application using the MERN stack featuring habit management, streak tracking, AI-generated reports and suggestions, interactive analytics dashboards, and responsive glassmorphism UI with real-time progress visualization.",
+      tags: [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT Authentication",
+        "Google Gemini AI API",
+        "Tailwind CSS",
+        "Chart.js/Recharts",
+        "REST APIs",
+        "JavaScript",
+        "HTML",
+        "CSS",
+      ],
+      image:
+        "https://tse2.mm.bing.net/th/id/OIP.aNRvPVcfAeSsD7Lwwo0ekQHaNK?rs=1&pid=ImgDetMain&o=7&rm=3",
+      codeLink:
+        "https://github.com/RajasiDeshpande/AI-Powered-Habit-Tracker-App",
     },
     {
       title: "Virtual Assistant Elsa",
-      description: "An intelligent AI-powered virtual assistant capable of voice interaction, task automation, and natural language understanding — built to feel human, designed to be smart.",
+      description:
+        "An intelligent AI-powered virtual assistant capable of voice interaction, task automation, and natural language understanding — built to feel human, designed to be smart.",
       tags: ["Javascript", "CSS", "HTML"],
-      image: "/elsa-assistant.png"
+      image: "/elsa-assistant.png",
+      codeLink: "https://github.com/RajasiDeshpande/Virtual-Assistant",
     },
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 relative z-10 container mx-auto max-w-6xl transition-colors duration-500">
+    <section
+      id="projects"
+      className="py-20 px-4 relative z-10 container mx-auto max-w-6xl transition-colors duration-500"
+    >
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold font-heading text-gray-800 dark:text-white mb-2">Featured Projects 💻</h2>
-        <p className="text-gray-500 dark:text-gray-400 font-medium">Some of my recent work</p>
+        <h2 className="text-4xl font-bold font-heading text-gray-800 dark:text-white mb-2">
+          Featured Projects 💻
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400 font-medium">
+          Some of my recent work
+        </p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,33 +82,56 @@ const ProjectsSection = () => {
 
             {/* Project Info */}
             <div className="p-6 relative">
-              <h3 className="text-2xl font-bold font-heading text-gray-800 dark:text-white mb-2">{project.title}</h3>
+              <h3 className="text-2xl font-bold font-heading text-gray-800 dark:text-white mb-2">
+                {project.title}
+              </h3>
+
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-light leading-relaxed">
                 {project.description}
               </p>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map(tag => (
-                  <span key={tag} className="text-xs font-medium px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 rounded-full border border-pink-100 dark:border-pink-800/30">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-medium px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 rounded-full border border-pink-100 dark:border-pink-800/30"
+                  >
                     {tag}
                   </span>
                 ))}
               </div>
 
               {/* Links */}
-              <div className="flex justify-between items-center pt-4 border-t border-pink-100/50 dark:border-pink-900/30">
-                <a href="#" className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
+              <div className="flex justify-start items-center pt-4 border-t border-pink-100/50 dark:border-pink-900/30">
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
+                >
                   <GitBranch size={18} />
-                  Code
+                  View Code
                 </a>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
-    </section>
 
+      {/* View All Projects CTA */}
+      <div className="mt-12 text-center">
+        <a
+          href="https://github.com/RajasiDeshpande"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full shadow-md transition"
+        >
+          View All Projects
+          <ExternalLink size={18} />
+        </a>
+      </div>
+    </section>
   );
 };
 
